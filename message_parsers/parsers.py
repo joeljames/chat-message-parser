@@ -65,12 +65,12 @@ class Parser(object):
         return json.dumps(d)
 
     def _get_page_title(self, url):
-        with urlopen(url) as response:
-            response_data = force_str(response.read())
-            match = re.findall(self.title_regex_pattern, response_data)
-            if match:
-                return match[0]
-            return None
+        response = urlopen(url)
+        response_data = force_str(response.read())
+        match = re.findall(self.title_regex_pattern, response_data)
+        if match:
+            return match[0]
+        return None
 
     def _get_page_title_or_none(self, url):
         try:

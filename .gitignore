@@ -23,6 +23,7 @@ __pycache__
 pip-log.txt
 
 # Testing
+.tox/
 nosetests.xml
 /reports/
 .coverage

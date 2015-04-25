@@ -23,8 +23,8 @@ from message_parsers.parsers import Parser
 
 ```
 
-Test
------
+Test & Coverage
+---------------
 1. Install Dependency
 
     ``` bash
@@ -35,4 +35,10 @@ Test
 
     ``` bash
     $ make test
+    ```
+
+3. Run Test Using Tox (Test the package in python 2.7 and 3.4):
+
+    ``` bash
+    $ tox
     ```
