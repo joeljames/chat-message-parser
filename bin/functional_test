@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+    echo "Runs functional tests and coverage."
+    exit
+fi
+
+# Run standard Nose tests with coverage
+nosetests tests/functional_tests --with-coverage --cover-erase --cover-package=message_parsers --with-yanc

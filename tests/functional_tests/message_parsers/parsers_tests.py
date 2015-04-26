@@ -1,6 +1,5 @@
 import json
 from nose.tools import *
-from mock import *
 
 from message_parsers.parsers import Parser
 
@@ -54,13 +53,3 @@ class TestParser(object):
         )
         output = Parser(message).to_json()
         assert_equal(output, expected_output)
-
-    @patch.multiple('message_parsers.parsers',
-                    urlopen=DEFAULT,
-                    re=DEFAULT)
-    def test_get_page_title(self, urlopen, re):
-        message = '@chris you around?'
-        Parser(message)._get_page_title('https://www.python.org')
-        urlopen.assert_called_with('https://www.python.org')
-        re.findall(Parser.title_regex_pattern, urlopen())
-
